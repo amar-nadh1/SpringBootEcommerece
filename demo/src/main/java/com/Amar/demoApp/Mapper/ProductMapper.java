@@ -1,6 +1,7 @@
 package com.Amar.demoApp.Mapper;
 
 import com.Amar.demoApp.Dto.ProductDTO;
+import com.Amar.demoApp.entity.Category;
 import com.Amar.demoApp.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,11 +20,12 @@ public class ProductMapper {
                 .model(product.getModel())
                 .title(product.getTitle())
                 .brand(product.getBrand())
+                .categoryId(product.getCategory().getId())
                 .popular(product.isPopular())
                 .build();
     }
 
-    public static Product toEntity(ProductDTO productDTO) {
+    public static Product toEntity(ProductDTO productDTO, Category category) {
         Product product = new Product();
         product.setColor(productDTO.getColor());
         product.setName(productDTO.getName());
@@ -33,6 +35,7 @@ public class ProductMapper {
         product.setTitle(productDTO.getTitle());
         product.setBrand(productDTO.getBrand());
         product.setPopular(productDTO.isPopular());
+        product.setCategory(category);
         return product;
     }
 }

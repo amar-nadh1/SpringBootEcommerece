@@ -1,6 +1,7 @@
 package com.Amar.demoApp.controller;
 
 import com.Amar.demoApp.Dto.ProductDTO;
+import com.Amar.demoApp.entity.Category;
 import com.Amar.demoApp.services.IProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

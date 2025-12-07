@@ -2,6 +2,9 @@ package com.Amar.demoApp.entity;
 
 import jakarta.persistence.Entity;
 
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 
 @Entity
@@ -19,5 +22,9 @@ public class Product extends BaseEntity {
     private String title;
     private String brand;
     private boolean popular;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
 }

@@ -9,6 +9,7 @@ import lombok.*;
 @Builder(toBuilder = true)
 @Data
 public class ProductDTO {
+    @Getter
     private String color;
     private String name;
     private int price;
@@ -17,10 +18,7 @@ public class ProductDTO {
     private String title;
     private String brand;
     private boolean popular;
-
-    public String getColor() {
-        return color;
-    }
+    private long categoryId;
 
     public void setColor(String color) {
         this.color = color;
